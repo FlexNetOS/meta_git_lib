@@ -1,0 +1,10 @@
+{
+  "schema": "handoff.context_capsule.v1",
+  "project_name": "meta_git_lib",
+  "role": "Shared Rust library of git operations for the meta CLI's plugins: queued repo cloning with progress, workspace snapshot create/restore, SSH connection multiplexing/rate-limit handling, and worktree-set management (git_ops/store/hooks/types). Depends on meta_core, meta_cli, and loop_lib; consumed by the git plugin per the workspace's RUST_LOG docs.",
+  "plane": "foundation",
+  "tier": "A",
+  "northstar": "Meta makes multi-repo feel like monorepo without the downsides; the canon machinery stays green, versioned by the parent distribution.",
+  "next_command": "Plan in kb first (git kb board); mint execution cards via hf (ADR-0003)",
+  "source": "ARCHITECTURE-TRUTH.md census 2026-06-12"
+}
