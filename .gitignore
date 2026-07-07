@@ -61,3 +61,9 @@ meta_rust_cli/
 
 # plugins (build instead)
 .meta-plugins
+
+# GitKB
+.kb/.cache/
+.kb/store/
+.kb/workspace/
+.kb/workspaces/

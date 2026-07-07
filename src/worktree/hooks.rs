@@ -7,11 +7,14 @@ use std::process::{Command, Stdio};
 use super::helpers::read_meta_config_value;
 use super::types::{CreateRepoEntry, PruneEntry};
 
-/// Fire a worktree lifecycle hook if configured in `.meta`.
+/// Fire a trusted worktree lifecycle hook if configured in `.meta`.
 ///
 /// Reads the `.meta` config for `worktree.hooks.<hook_name>`.
 /// If configured, spawns the command and pipes `payload` JSON to stdin.
 /// Hook failure prints a warning but doesn't block the operation.
+/// These hook strings are trusted workspace configuration and execute through
+/// the shell; callers should only run worktree lifecycle operations for trusted
+/// meta configs.
 pub fn fire_worktree_hook(hook_name: &str, payload: &serde_json::Value, meta_dir: Option<&Path>) {
     let dir = match meta_dir {
         Some(d) => d,
