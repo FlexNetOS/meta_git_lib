@@ -273,7 +273,10 @@ mod tests {
 
         // Manually mark path as completed
         {
-            let mut completed = queue.completed.lock().unwrap_or_else(std::sync::PoisonError::into_inner);
+            let mut completed = queue
+                .completed
+                .lock()
+                .unwrap_or_else(std::sync::PoisonError::into_inner);
             completed.insert(path.clone());
         }
 
